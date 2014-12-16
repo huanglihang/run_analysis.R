@@ -24,4 +24,4 @@ the repo has completed the requirement as below:
 
 Finally,clone the script of run_analysis.R into the R,and run it in your working directory, you will get a file which is the project required. Name is "tidydataset.txt"
 
-P.S. you should change the working directory into your own real directory.
+P.S. you should change the working directory into your own real directory when you run the script in the R
