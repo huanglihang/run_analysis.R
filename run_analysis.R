@@ -25,24 +25,29 @@ names(x_train) = feature_names
 x_test = x_test[,grepl("mean|std",feature_names)]
 x_train = x_train[,grepl("mean|std", feature_names)]
 
-## create a column in the y_test & y_train which matchs the order of activity_names,and combine x_test　　
+## create a column in the y_test & y_train which matchs the order of activity_names,and combine x_test & x_train, y_test & y_train.
 data = rbind(x_test,x_train)
 y_test[,2] = activity_names[y_test[,1]]
 y_train[,2] = activity_names[y_train[,1]]
 activities = rbind(y_test, y_train)
 
+## give the data.frame "activityies" column name.
 names(activities) = c("ActivityID","Activity")
 
+## create a new vector "subject" contain the subject_test & subject_train.
 subject<-rbind(subject_test, subject_train)
 colnames(subject)<-"s_number"
-class(subject)
-class(activities)
 
+## create a entire data.frame which contain subject, activities and data
 final_data = cbind(subject, activities, data)
 
+## create the id label vector and separate other variables depending on id label.
 id_labels = c("s_number","ActivityID","Activity")
 data_labels = setdiff(colnames(final_data), id_labels)
 
+## use the melt() & dcast() function to get the tidydata.
 predata = melt(final_data, id = id_labels, measure.vars = data_labels)
 result = dcast(predata, s_number + Activity ~ variable, mean)
+
+## save the tidydata into a txt file which names "tidydataset.txt"
 write.table(result, "tidydataset.txt",sep="/")
