@@ -23,3 +23,5 @@ the repo has completed the requirement as below:
 5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 Finally,clone the script of run_analysis.R into the R,and run it in your working directory, you will get a file which is the project required. Name is "tidydataset.txt"
+
+P.S. you should change the working directory into your own real directory.
