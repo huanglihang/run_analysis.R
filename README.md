@@ -4,7 +4,7 @@ run_analysis.R
 ###This is for the course of Getting and Cleaning Data.
 ###The course project of Getting and Cleaning Data.
 
-#In my repo, there are three folders. 
+###In my repo, there are three folders. 
 README.md, as you see, it is the overview of the project work.
 
 run_analysis.R is the crucial file which contains the programing of the project.
